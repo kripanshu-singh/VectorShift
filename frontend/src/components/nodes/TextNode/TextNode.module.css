@@ -1,0 +1,43 @@
+.variableInfo {
+  background-color: rgba(var(--llm-color-rgb), 0.1);
+  border: 1px solid rgba(var(--llm-color-rgb), 0.2);
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 12px;
+  color: var(--llm-color);
+}
+
+.variableInfo strong {
+  font-weight: 600;
+}
+
+.variableTags {
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.variableTag {
+  background-color: var(--llm-color);
+  color: var(--background-color);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: monospace;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+.textarea {
+  resize: none;
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.4;
+}

@@ -1,0 +1,11 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.textarea {
+  resize: vertical;
+  font-family: monospace;
+  font-size: 12px;
+}
