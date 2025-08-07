@@ -1,0 +1,101 @@
+.node {
+  background-color: var(--node-background);
+  border: 1px solid var(--node-border);
+  border-radius: 8px;
+  width: 280px; /* A bit wider for a better look */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.node:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.selected {
+  border-color: var(--node-border-selected);
+  box-shadow: 0 0 0 1px var(--node-border-selected),
+    0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--node-border);
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: var(--text-secondary);
+}
+
+.title {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.content {
+  padding: 12px;
+  font-family: inherit;
+}
+
+.handle {
+  width: 8px !important;
+  height: 8px !important;
+  background: var(--handle-color) !important;
+  border: 1px solid var(--node-border) !important;
+}
+
+.handle:hover {
+  background: var(--node-border-selected) !important;
+}
+
+.node {
+  max-width: 100%;
+  width: 280px;
+}
+
+.node {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.03),
+    0 0 0 1px rgba(var(--node-background-rgb), 0.05) inset;
+}
+
+.node:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 8px 20px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(var(--node-background-rgb), 0.08) inset;
+}
+
+.node::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--node-background-rgb), 0.1) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.node[data-connecting="true"] {
+  border-color: var(--node-border-selected);
+  box-shadow: 0 0 0 2px rgba(var(--node-border-selected-rgb), 0.2);
+  animation: pulse-connect 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-connect {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}

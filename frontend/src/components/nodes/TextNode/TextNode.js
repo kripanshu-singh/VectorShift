@@ -1,5 +1,8 @@
 import { Position } from "reactflow";
 import React, { useEffect, useRef } from "react";
+import BaseNode from "../BaseNode/BaseNode";
+import FormField from "../../common/FormField/FormField";
+import { TextIcon } from "../../common/Icons";
 import wrapperStyles from "../../common/NodeWrapper.module.css";
 import { useStore } from "../../../store/pipelineStore";
 import styles from "./TextNode.module.css";
@@ -39,39 +42,47 @@ export const TextNode = ({ id, data, selected }) => {
   ];
 
   return (
-    <div className={wrapperStyles.wrapper}>
-      <div id={`${id}-content`} label="Text Content">
-        <textarea
-          ref={textareaRef}
-          value={data.text}
-          onChange={(e) => updateNodeField(id, "text", e.target.value)}
-          placeholder="Enter text with {{variables}} for dynamic inputs..."
-          rows={4}
-          className={styles.textarea}
-          style={{ overflowY: "hidden" }}
-        />
-      </div>
+    <BaseNode
+      title="Text"
+      icon={TextIcon}
+      handles={handles}
+      selected={selected}
+      data={data}
+    >
+      <div className={wrapperStyles.wrapper}>
+        <FormField id={`${id}-content`} label="Text Content">
+          <textarea
+            ref={textareaRef}
+            value={data.text}
+            onChange={(e) => updateNodeField(id, "text", e.target.value)}
+            placeholder="Enter text with {{variables}} for dynamic inputs..."
+            rows={4}
+            className={styles.textarea}
+            style={{ overflowY: "hidden" }}
+          />
+        </FormField>
 
-      {/* Variable Detection Info */}
-      {variables.length > 0 && (
-        <div className={styles.variableInfo}>
-          <strong>Variables detected:</strong>
-          <div className={styles.variableTags}>
-            {variables.map((variable) => (
-              <span key={variable} className={styles.variableTag}>
-                {variable}
-              </span>
-            ))}
+        {/* Variable Detection Info */}
+        {variables.length > 0 && (
+          <div className={styles.variableInfo}>
+            <strong>Variables detected:</strong>
+            <div className={styles.variableTags}>
+              {variables.map((variable) => (
+                <span key={variable} className={styles.variableTag}>
+                  {variable}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Stats */}
-      <div className={styles.stats}>
-        <span>Words: {wordCount}</span>
-        <span>Characters: {data.text.length}</span>
-        <span>Variables: {variables.length}</span>
+        {/* Stats */}
+        <div className={styles.stats}>
+          <span>Words: {wordCount}</span>
+          <span>Characters: {data.text.length}</span>
+          <span>Variables: {variables.length}</span>
+        </div>
       </div>
-    </div>
+    </BaseNode>
   );
 };
