@@ -7,6 +7,9 @@ import { InputNode } from "../nodes/InputNode/InputNode";
 import { LLMNode } from "../nodes/LLMNode/LLMNode";
 import { OutputNode } from "../nodes/OutputNode/OutputNode";
 import { TextNode } from "../nodes/TextNode/TextNode";
+import { MathNode } from "../nodes/MathNode/MathNode";
+import { TimerNode } from "../nodes/TimerNode/TimerNode";
+import { ConditionalLogicNode } from "../nodes/ConditionalLogicNode/ConditionalLogicNode";
 import "reactflow/dist/style.css";
 
 const gridSize = 20;
@@ -16,6 +19,9 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+  math: MathNode,
+  timer: TimerNode,
+  conditionalLogic: ConditionalLogicNode,
 };
 
 const selector = (state) => ({
