@@ -7,7 +7,7 @@ export const SubmitButton = () => {
     const handleSubmit = async () => {
         try {
             const response = await fetch(
-              "https://vectorshift-mq21.onrender.com/",
+              "https://vectorshift-mq21.onrender.com/pipelines/parse",
               {
                 method: "POST",
                 headers: {
