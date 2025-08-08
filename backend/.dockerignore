@@ -1,0 +1,13 @@
+# Ignore Dockerfile and .dockerignore
+Dockerfile
+.dockerignore
+
+# Ignore virtualenv
+.venv
+venv
+
+# Ignore pycache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
