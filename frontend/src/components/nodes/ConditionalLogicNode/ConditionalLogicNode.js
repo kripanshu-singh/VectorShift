@@ -6,8 +6,6 @@ import { ConditionalLogicIcon } from "../../common/Icons";
 import { useStore } from "../../../store/pipelineStore";
 
 export const ConditionalLogicNode = ({ id, data, selected }) => {
-  console.log(`\n ~ ConditionalLogicNode ~ data :- `, data);
-
   const updateNodeField = useStore((state) => state.updateNodeField);
 
   const handles = [
