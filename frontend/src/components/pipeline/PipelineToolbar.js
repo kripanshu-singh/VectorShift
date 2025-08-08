@@ -2,6 +2,7 @@ import { DraggableNode } from "../common/DraggableNode/DraggableNode";
 import { useTheme } from "../../ThemeContext";
 import { MoonIcon, SunIcon, TrashIcon, KIcon } from "../common/Icons";
 import { useStore } from "../../store/pipelineStore";
+import { SubmitButton } from "../common/SubmitButton/SubmitButton";
 
 export const PipelineToolbar = () => {
   const { theme, toggleTheme } = useTheme();
@@ -17,6 +18,7 @@ export const PipelineToolbar = () => {
         <DraggableNode type="math" label="Math" />
         <DraggableNode type="timer" label="Timer" />
         <DraggableNode type="conditionalLogic" label="Conditional" />
+        <SubmitButton />
       </div>
       <div className="pipeline-toolbar__actions">
         <button
@@ -42,7 +44,7 @@ export const PipelineToolbar = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="pipeline-toolbar__button"
-          style={{borderRadius: "8px"}}
+          style={{ borderRadius: "8px" }}
           aria-label="Kripanshu Singh Portfolio"
         >
           <KIcon className="pipeline-toolbar__icon" />
