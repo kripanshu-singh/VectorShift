@@ -18,9 +18,11 @@ export const TextNode = ({ id, data, selected }) => {
     }
   }, [data.text]);
 
-  const variableRegex = /\{\{(\w+)\}\}/g;
+  const variableRegex = /\{\{\s*([^}]+?)\s*\}\}/g;
   const variables = [
-    ...new Set(Array.from(data.text.matchAll(variableRegex), (m) => m[1])),
+    ...new Set(
+      Array.from(data.text.matchAll(variableRegex), (m) => m[1].trim()),
+    ),
   ];
   const wordCount = data.text.trim().split(/\s+/).filter(Boolean).length;
 
