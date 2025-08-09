@@ -175,7 +175,7 @@ docker run -p 8000:8000 vectorshift-backend
 - Skills: React, Node.js, Spring Boot, Docker, GCP.
 - **B.Tech CSE** – CGPA: 8.01.
 
-[View Full Resume](frontend/public/Kripanshu_Singh_Resume.pdf)
+[View Full Resume](https://drive.google.com/file/d/1UIWD6wi9WEodhoTZH5fmJNvXqLROwSoG/view?usp=sharing)
 
 </details>
 
